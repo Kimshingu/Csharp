@@ -13,8 +13,7 @@ namespace Client
         {
             this.reader = reader;
         }
-        //서버에서 불특정하게 날아오는 다른 Client가 쓴 내용을
-        //받기 위해 클라이언트의 글읽는 부분을 쓰레드로 처리
+
         public void chat()
         {
             try
@@ -36,7 +35,6 @@ namespace Client
         static void Main(string[] args)
         {
             TcpClient client = null;
-            StreamReader reader = null;
             try
             {
                 client = new TcpClient(); //1. 소켓 생성
@@ -45,6 +43,8 @@ namespace Client
                 StreamWriter writer = new StreamWriter(stream) { AutoFlush = true };
                 // 4. 글을 쓰려면  StreamWriter
 
+                Encoding encode = Encoding.GetEncoding("utf-8");
+                StreamReader reader = new StreamReader(stream, encode);
 
                 ServerHandler serverHandler = new ServerHandler(reader);
                 Thread t = new Thread(new ThreadStart(serverHandler.chat));
@@ -53,14 +53,9 @@ namespace Client
 
                 string dataToSend = Console.ReadLine();
 
-                Encoding encode = Encoding.GetEncoding("utf-8");
-                reader = new StreamReader(stream, encode);
-
                 while (true)
                 {
                     writer.WriteLine(dataToSend);
-                    string str = reader.ReadLine();
-                    Console.WriteLine(str);
 
                     if (dataToSend.IndexOf("<EOF>") > -1) break; 
                     // 글을 그만 보내고 싶다면 <EOF>
