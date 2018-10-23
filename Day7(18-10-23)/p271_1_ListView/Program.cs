@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Collections.Generic;
+using System.Collections.Generic;
+
 
 namespace p271_1_ListView
 {
@@ -35,9 +36,11 @@ namespace p271_1_ListView
             ColumnHeader name = new ColumnHeader();
             name.Text = "Name"; // 컬럼1 타이틀
             name.Width = -1;
+            name.TextAlign = HorizontalAlignment.Center;
+
             ColumnHeader year = new ColumnHeader();
             year.Text = "Year"; // 컬럼2 타이틀
-
+            year.TextAlign = HorizontalAlignment.Center;
             SuspendLayout();
 
             ListView lv = new ListView();
@@ -48,6 +51,7 @@ namespace p271_1_ListView
             //lv.Sorting = SortOrder.Ascending;
 
             lv.Columns.AddRange(new ColumnHeader[] { name, year }); // 한번에 컬럼타이틀 세팅
+            
             //lv.ColumnClick += new ColumnClickEventHandler(ColumnClick);
             lv.ColumnClick += ColumnClick;
 

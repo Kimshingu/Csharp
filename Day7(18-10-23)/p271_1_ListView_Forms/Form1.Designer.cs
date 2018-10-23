@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lv = new System.Windows.Forms.ListView();
-            this.ss = new System.Windows.Forms.StatusStrip();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ss = new System.Windows.Forms.StatusStrip();
             this.sb = new System.Windows.Forms.ToolStripStatusLabel();
             this.ss.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,14 @@
             this.lv.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             this.lv.Click += new System.EventHandler(this.listView1_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Year";
+            // 
             // ss
             // 
             this.ss.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -63,14 +71,6 @@
             this.ss.Size = new System.Drawing.Size(334, 22);
             this.ss.TabIndex = 1;
             this.ss.Text = "statusStrip1";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Year";
             // 
             // sb
             // 
