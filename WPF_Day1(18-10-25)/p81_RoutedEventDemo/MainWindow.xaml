@@ -1,0 +1,22 @@
+﻿<Window x:Class="p81_RoutedEventDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:p81_RoutedEventDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <TextBlock Name="txtBlk" FontSize="20pt" HorizontalAlignment="Center" 
+               VerticalAlignment="Center" ToolTip="Right Click to display contect menu"
+               MouseLeftButtonDown="TextBlock_Click" >
+        TextBlock With Contect Menu
+        <TextBlock.ContextMenu>
+            <ContextMenu MenuItem.Click="ContextMenu_Click">
+                <MenuItem Header="Red"/>
+                <MenuItem Header="Green"/>
+                <MenuItem Header="blue"/>
+                <MenuItem Header="Orange"/>
+            </ContextMenu>
+        </TextBlock.ContextMenu>
+    </TextBlock>
+</Window>
