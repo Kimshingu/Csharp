@@ -10,7 +10,9 @@
 
         <TextBox Height="23" HorizontalAlignment="Left"
             Margin="201,98,0,0" Name="textBox2" VerticalAlignment="Top"
-            Width="120" />        <StackPanel>
+            Width="120" />
+
+        <StackPanel>
             <!-- Binding Source. -->
             <ScrollBar Name="scroll"
                  Orientation="Horizontal" Margin="24"
@@ -19,6 +21,7 @@
             <Label HorizontalAlignment="Center"
                  DataContext="{Binding ElementName=scroll}"
                  Content="{Binding Path=Value}" />
-        </StackPanel>    </Grid>
+        </StackPanel>
+    </Grid>
     
 </Window>

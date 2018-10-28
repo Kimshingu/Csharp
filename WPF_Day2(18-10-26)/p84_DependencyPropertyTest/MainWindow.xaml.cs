@@ -49,7 +49,8 @@ namespace p84_DependencyPropertyTest
         private void ContextMenu_Click(object sender, RoutedEventArgs e)
         {
             string str = (e.Source as MenuItem).Header as string;
-            MyText = str;
+            MyText = str;
+
         }
     }
 }
