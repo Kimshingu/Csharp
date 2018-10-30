@@ -1,0 +1,29 @@
+﻿<Window x:Class="p277__WPFStyle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:p277__WPFStyle"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style x:Key="normal">
+                <Setter Property="Control.FontSize" Value="22" />
+                <Setter Property="Control.Foreground" Value="Red" />
+                <Setter Property="Control.HorizontalAlignment" Value="Center" />
+                <Setter Property="Control.Margin" Value="30" />
+                <Setter Property="Control.Padding" Value="20, 10, 20, 10" />
+            </Style>
+        </StackPanel.Resources>
+        <Button Style="{StaticResource normal}">
+            버튼 테스트1
+        </Button>
+        <TextBlock Style="{StaticResource normal}">
+            텍스트 블록 테스트
+        </TextBlock>
+        <Button Style="{StaticResource normal}">
+            버튼 테스트2
+        </Button>
+    </StackPanel>
+</Window>
